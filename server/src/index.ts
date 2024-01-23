@@ -12,7 +12,7 @@ const app=express();
 
 app.use(express.json()) // convert all the data coming towards server into JSON format
 app.use(cors()) // Cross Origin Resource Sharing
-app.use("/user",userRouter)  // makes the call to the http://localhost:3001/user/...
+app.use("/user",userRouter)  // makes the call to the http://localhost:3000/user/...
 
 mongoose.connect(databaseURL);
 

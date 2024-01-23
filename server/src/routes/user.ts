@@ -22,9 +22,9 @@ router.post('/register',async(req:Request,res : Response) => {
     })
     await newUser.save()
 
-    return res.json({message : "User Registered SuccessFully"})
+     res.json({message : "User Registered SuccessFully"})
     } catch(error){
-        return res.status(500).json({type :error})
+     res.status(500).json({type :error})
     }
 })
 
