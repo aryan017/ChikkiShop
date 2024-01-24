@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import { userRouter } from './routes/user'
+import { productRouter } from './routes/product'
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ const app=express();
 app.use(express.json()) // convert all the data coming towards server into JSON format
 app.use(cors()) // Cross Origin Resource Sharing
 app.use("/user",userRouter)  // makes the call to the http://localhost:3000/user/...
+app.use("/product",productRouter)
 
 mongoose.connect(databaseURL);
 
