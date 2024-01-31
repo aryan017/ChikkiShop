@@ -1,6 +1,6 @@
 import axios from "axios";
 import { SyntheticEvent, useState } from "react"
-import { UserErrors } from "../../errors";
+import { UserErrors } from "../../models/errors";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -58,19 +58,19 @@ const Register=() => {
 const Login=() => {
     const [username,setUsername]=useState<string>("");
     const [password,setPassword]=useState<string>("");
-    const [_,setCookies]=useCookies(["access-token"]);
+    const [_,setCookies]=useCookies(["access_token"]);
     const navigate=useNavigate();
     
     const handleSubmit=async (event : SyntheticEvent) => {
         event.preventDefault();
         try{
         const result=await axios.post('http://localhost:3000/user/login',{username,password});// request Body
-        setCookies("access-token",result.data.token);
+        setCookies("access_token",result.data.token);
         localStorage.setItem("userID",result.data.userID);
         navigate("/")
         }catch(error){
             let errorMessage : string=""
-            switch(error.response.data.type){
+            switch(error?.response?.data?.type){
                 case UserErrors.NO_USER_FOUND :
                     errorMessage="User doesn't Exists"
                     break;

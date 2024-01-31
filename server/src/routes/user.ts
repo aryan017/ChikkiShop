@@ -46,7 +46,7 @@ router.post('/login' , async (req : Request, res : Response) => {
       const token=jwt.sign({id:user._id},"secret");
       res.json({token,userID : user._id});
     }catch(error){
-        
+      res.status(500).json({ type: error });
     }
 })
 
@@ -61,9 +61,10 @@ export const verifyToken = (req : Request, res : Response , next : NextFunction)
                 }
                 next();
              })
-    }
+    }else{
 
-    return res.sendStatus(401);   // Client has invalid Authentication
+    return res.sendStatus(401);
+    }   // Client has invalid Authentication
 
 }
 
