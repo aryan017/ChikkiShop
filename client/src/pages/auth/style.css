@@ -1,0 +1,20 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8; /* Lighter background color */
+  }
+  
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Increased padding for better spacing */
+    background-color: #ffffff;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced box shadow for depth */
+    margin: 20px;
+    width: 400px
+  }
