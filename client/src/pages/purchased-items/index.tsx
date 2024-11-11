@@ -11,7 +11,7 @@ export const PurchasedItemsPage=() => {
                 {purchasedItems.map((item) => {
                     const count=getCartItemCount(item._id)
                     return (
-                        <div className="item">
+                        <div className="item" key={item._id}>
                            <h3>{item.productName}</h3>
                            <img src={item.imageURL}/>
                            <p>Rs{item.price}</p>

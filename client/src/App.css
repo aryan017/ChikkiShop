@@ -5,33 +5,50 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+  background-color: #f4f4f9; /* Light background for subtle contrast */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(19, 19, 19);
-  color: white;
-  padding: 10px;
+  background-color: #131313; /* Dark background for contrast */
+  color: #ffffff;
+  padding: 15px 30px; /* Expanded padding for better spacing */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a polished look */
 }
 
 .navbarLinks {
   display: flex;
-  margin-right: 20px;
+  align-items: center;
+  gap: 20px; /* Consistent spacing between links */
 }
 
 .navbarLinks span {
-  margin: 0px;
-  padding: 0px;
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 20px;
-  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px; /* Added padding for larger clickable area */
+  border-radius: 8px; /* Soft rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #333333; /* Dark gray for hover effect */
+  color: #e0e0e0;
+}
+
+/* Optional styling for active link */
+.navbar a.active {
+  color: #ff6b6b; /* Highlight color for active link */
+  font-weight: bold;
 }

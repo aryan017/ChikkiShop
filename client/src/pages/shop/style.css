@@ -1,49 +1,65 @@
 .products {
-    margin-top: 100px;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-  }
-  
-  .product {
-    border-radius: 15px;
-    width: 300px;
-    height: 300px;
-    margin: 100px;
-    margin-top: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .product img {
-    width: 300px;
-  }
-  
-  .product .description {
-    text-align: center;
-  }
-  
-  .product:hover {
-    transition: 0.3s ease-in;
-  }
-  
-  .addToCartBttn {
-    background-color: transparent;
-    border: 2px solid rgb(19, 19, 19);
-    min-width: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 15px;
-  }
-  
-  .addToCartBttn:hover {
-    background-color: rgb(19, 19, 19);
-    color: white;
-    cursor: pointer;
-  }
+  margin-top: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 40px; /* Consistent spacing between items */
+  place-items: center;
+  padding: 20px;
+}
+
+.product {
+  border-radius: 20px;
+  width: 280px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover effect */
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.product img:hover {
+  transform: scale(1.05); /* Subtle zoom on image hover */
+}
+
+.product .description {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.addToCartBttn {
+  background-color: transparent;
+  border: 2px solid #333;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.addToCartBttn:hover {
+  background-color: #333;
+  color: #ffffff;
+  transform: translateY(-3px); /* Lift effect on button hover */
+}

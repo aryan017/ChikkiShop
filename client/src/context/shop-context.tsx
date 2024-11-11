@@ -5,6 +5,7 @@ import axios from "axios";
 import { useGetToken } from "../hooks/useGetToken";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { ProductErrors } from "../models/errors";
 
 export interface IShopContext{
   addToCart : (itemId : string) => void;
@@ -95,26 +96,43 @@ const defaultVal : IShopContext={
 
     const getTotalCartAmount=() : number => {
         let totalAmount=0;
-        for(const item in cartItems){
-            if(cartItems[item]>0){
-                const itemInfo : IProduct=products.find((product) => product._id === item);
-
-                totalAmount+=(cartItems[item] * itemInfo.price)
+        Object.keys(cartItems).forEach((itemId) => {
+            const quantity = cartItems[itemId];
+            const itemInfo: IProduct | undefined = products.find((product) => product._id === itemId);
+        
+            if (itemInfo) {
+              totalAmount += quantity * itemInfo.price;
             }
-        }
-        return totalAmount;
+          });
+        
+          return totalAmount;
     }
 
     const checkout = async() => {
-        const body={customerID : localStorage.getItem("userID"),cartItems}
+        const body={customerID: localStorage.getItem("userID"),cartItems}
         try{
           await axios.post("http://localhost:3000/product/checkout",body,{headers})
           setCartItems({});
           fetchAvailableMoney();
           fetchPurchasedItems();
-          navigate("/")
-        }catch(error){
-            console.log(error)
+          navigate("/");
+        }catch(err){
+            let errorMessage: string = "";
+            switch (err.response.data.type) {
+              case ProductErrors.NO_PRODUCT_FOUND:
+                errorMessage = "No product found";
+                break;
+              case ProductErrors.NO_AVAILABLE_MONEY:
+                errorMessage = "Not enough money";
+                break;
+              case ProductErrors.NOT_ENOUGH_STOCK:
+                errorMessage = "Not enough stock";
+                break;
+              default:
+                errorMessage = "Something went wrong";
+            }
+      
+            alert("ERROR: " + errorMessage);
         }
     }
 

@@ -1,43 +1,60 @@
 .purchased-items {
-    margin-top: 100px;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    place-items: center;
-  }
-  
-  .purchased-items .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-  
-  .purchased-items .item img {
-    width: 200px;
-    height: 200px;
-  
-    background-color: #ccc;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
-  }
-  
-  .purchased-items button {
-    background-color: transparent;
-    border: 2px solid rgb(19, 19, 19);
-    min-width: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 15px;
-  }
-  
-  .purchased-items button:hover {
-    background-color: rgb(19, 19, 19);
-    color: white;
-    cursor: pointer;
-  }
+  margin-top: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Consistent spacing between items */
+  place-items: center;
+  padding: 0 20px;
+}
+
+.purchased-items .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
+}
+
+.purchased-items .item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.purchased-items .item img {
+  width: 180px;
+  height: 180px;
+  background-color: #e0e0e0; /* Light background for image placeholder */
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.purchased-items .item img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.purchased-items button {
+  background-color: transparent;
+  border: 2px solid #333; /* Darker border color for contrast */
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.purchased-items button:hover {
+  background-color: #333;
+  color: #ffffff;
+  transform: translateY(-3px); /* Lift effect on hover */
+}

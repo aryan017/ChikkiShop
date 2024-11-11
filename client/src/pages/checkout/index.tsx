@@ -19,16 +19,20 @@ export const CheckOutPage=() => {
         <div className="cart">
           {products.map((product : IProduct) => {
             if(getCartItemCount(product._id) !==0){
-               return  <CartItem product={product}/>;
+               return  <CartItem key={product._id} product={product}/>;
             }
+            return null;
          })}
         </div>
-        {totalAmount > 0 ? (
+        {Object.keys(products).length>0 ? (
         <div className="checkout">
-           <p>Subtotal : Rs {totalAmount}</p>
-           <button onClick={() => navigate("/")}>Continue Shopping</button>
-           <button onClick={checkout}>CheckOut</button>
-        </div>) : (<h1>Your Shopping Cart is Empty</h1>)}
+          <p>Subtotal: Rs {totalAmount}</p>
+          <button onClick={() => navigate("/")}>Continue Shopping</button>
+          <button onClick={checkout}>CheckOut</button>
         </div>
-        );
+      ) : (
+        <h1>Your Shopping Cart is Empty</h1>
+      )}
+    </div>
+  );
 }

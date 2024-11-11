@@ -1,11 +1,11 @@
 import {Schema,model} from 'mongoose';
 
 export interface IUser{
-    _id?:String;
-    username:String;
-    password:String;
+    _id?:string;
+    username:string;
+    password:string;
     availableMoney:number;
-    purchasedItems:String[];  
+    purchasedItems:string[];  
 }
 
 const UserSchema=new Schema<IUser>({
