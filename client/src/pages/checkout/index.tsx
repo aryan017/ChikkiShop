@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export const CheckOutPage=() => {
     const {getCartItemCount,getTotalCartAmount,checkout} = useContext<IShopContext>(ShopContext)
     const {products}=useGetProducts()
-    const totalAmount=getTotalCartAmount();
+    const totalAmount = products?.length > 0 ? getTotalCartAmount() : 0;
     const navigate=useNavigate()
     return (
     <div className="cart">

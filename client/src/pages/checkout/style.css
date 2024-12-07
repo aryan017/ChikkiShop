@@ -49,13 +49,71 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   margin: 0 10px;
-  transition: border 0.3s ease;
+  background: #f8f8f8; /* Light background for a clean look */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
 }
 
 .count-handler input:focus {
   border-color: #6c63ff; /* Accent color on focus */
   outline: none;
+  background: #ffffff; /* Lighter background on focus for contrast */
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.6); /* Glowing effect on focus */
 }
+
+.count-handler input:hover {
+  border-color: #6c63ff; /* Border changes color on hover for interactivity */
+  background: #f0f0f0; /* Slight darkening of background on hover */
+}
+
+.count-handler button {
+  background-color: #888; /* Medium grey for the background */
+  color: #ffffff; /* White text for contrast */
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-transform: uppercase; /* Capitalize text for boldness */
+  letter-spacing: 1px; /* Slightly space out the letters */
+}
+
+.count-handler button:hover {
+  background-color: black; /* Darker grey on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.count-handler button:active {
+  transform: translateY(1px); /* Subtle "press" effect when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow for "pressed" effect */
+}
+
+.checkout p {
+  font-size: 18px; /* Larger font size for readability */
+  font-weight: 600; /* Slightly bold for emphasis */
+  color: #333; /* Dark text for good contrast */
+  line-height: 1.6; /* Improve readability with more line spacing */
+  text-transform: capitalize; /* Capitalize each word for a stylish look */
+  margin: 15px 0; /* Space out paragraphs for a cleaner layout */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+  letter-spacing: 0.5px; /* Slight spacing for a more modern feel */
+}
+
+.checkout p:hover {
+  color: #6c63ff; /* Accent color for hover effect */
+  transform: translateX(5px); /* Slight slide effect on hover */
+}
+
+.checkout p:before {
+  content: "» "; /* Add a decorative arrow before the text */
+  color: #6c63ff; /* Accent color for the arrow */
+  margin-right: 10px; /* Space between arrow and text */
+}
+
 
 .checkout button {
   width: 160px;

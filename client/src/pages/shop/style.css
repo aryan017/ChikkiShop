@@ -54,12 +54,16 @@
   border-radius: 15px;
   font-size: 14px;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  text-transform: uppercase; /* Make the text all caps for added impact */
+  letter-spacing: 1px; /* Slightly space out letters for a cleaner look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
 
 .addToCartBttn:hover {
   background-color: #333;
   color: #ffffff;
   transform: translateY(-3px); /* Lift effect on button hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for a more dramatic hover effect */
 }

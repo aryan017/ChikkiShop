@@ -11,19 +11,21 @@ export const useGetProducts=() =>{
     const {isAuthenticated}= useContext<IShopContext>(ShopContext)
 
     const fetchProducts=async () => {
-        try{
-        const fetchedProducts=await axios.get("http://localhost:3000/product",{headers});
-        setProducts(fetchedProducts.data.products);
-        }catch(error){
-            alert("ERROR : Something went wrong");
+        try {
+            const fetchedProducts = await axios.get("http://localhost:3000/product", { headers });
+            console.log("Fetched Products:", fetchedProducts.data);  // Log response data
+            setProducts(fetchedProducts.data.products);
+        } catch (error) {
+            alert("ERROR: Something went wrong");
+            console.error("Error fetching products:", error);
         }
     }
 
     useEffect(() => {
-        if(isAuthenticated){
+        
           fetchProducts();
-        }
-    },[isAuthenticated])
+        
+    },[])
 
     return {products};
 }

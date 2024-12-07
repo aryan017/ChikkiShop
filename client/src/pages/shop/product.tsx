@@ -23,7 +23,7 @@ export const Product= (props : Props) => {
          <p>Rs {price}</p>
 
        </div>
-       <button className="add-to-cart-bttn" onClick={() => addToCart(_id)}>
+       <button className="addToCartBttn" onClick={() => addToCart(_id)}>
         Add to Cart {count>0 && <>({count})</>}
         </button>
        <div className="stock-quantity">

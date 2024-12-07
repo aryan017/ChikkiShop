@@ -94,19 +94,36 @@ const defaultVal : IShopContext={
         setCartItems((prev) => ({...prev,[itemId] : newAmount}))
     }
 
-    const getTotalCartAmount=() : number => {
-        let totalAmount=0;
-        Object.keys(cartItems).forEach((itemId) => {
-            const quantity = cartItems[itemId];
-            const itemInfo: IProduct | undefined = products.find((product) => product._id === itemId);
-        
-            if (itemInfo) {
-              totalAmount += quantity * itemInfo.price;
-            }
-          });
-        
-          return totalAmount;
+    const getTotalCartAmount = () => {
+      if (products.length === 0) return 0;
+  
+      let totalAmount = 0;
+      for (const item in cartItems) {
+        if (cartItems[item] > 0) {
+          let itemInfo: IProduct = products.find(
+            (product) => product._id === item
+          );
+  
+          totalAmount += cartItems[item] * itemInfo.price;
+        }
+      }
+      return Number(totalAmount.toFixed(2));
+    };
+  
+
+  /**   useEffect(() => {
+      console.log("Products:", products);
+      console.log("Cart Items:", cartItems);
+  }, [products, cartItems]);
+  
+
+  useEffect(() => {
+    if (products?.length && Object.keys(cartItems).length) {
+        const total = getTotalCartAmount();
+        console.log("Calculated Total Amount: ", total);
     }
+}, [products, cartItems]); */
+
 
     const checkout = async() => {
         const body={customerID: localStorage.getItem("userID"),cartItems}

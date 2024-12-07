@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import { userRouter } from './routes/user'
 import { productRouter } from './routes/product'
+//import {addIpToAtlas} from './addIP_to_MongoDB'
 
 dotenv.config()
 
@@ -15,6 +16,8 @@ app.use(express.json()) // convert all the data coming towards server into JSON 
 app.use(cors()) // Cross Origin Resource Sharing
 app.use("/user",userRouter)  // makes the call to the http://localhost:3000/user/...
 app.use("/product",productRouter)
+
+//addIpToAtlas()
 
 mongoose.connect(databaseURL);
 
