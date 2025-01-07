@@ -34,13 +34,17 @@ History, so that they can buy again that stuff if they want.
    git clone https://github.com/yourusername/your-repo.git
 
 2. Navigate to the project directory:
+   ```bash
    cd your-repo
 
 3. Install dependencies:
+   ```bash
    npm install
 
 4. Run the development Client:
+   ```bash
    npm start
 
 5. Run the development Server:
+   ```bash
    npm run dev
