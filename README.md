@@ -12,6 +12,27 @@ This project is based on The technology of E-commerce like Amazon or Flipkart. I
 buy stuff online by selecting the items and checking out, when checking out some money is deducted from users current account Balance, Customer can also able to see their purchase
 History, so that they can buy again that stuff if they want.
 
+## Screenshots
+
+### Dashboard
+![Dashboard Screenshot](assets/Screenshot(3).png "Dashboard View")
+![Dashboard Screenshot](assets/Screenshot(4).png "Dashboard View")
+![Dashboard Screenshot](assets/Screenshot(5).png "Dashboard View")
+![Dashboard Screenshot](assets/Screenshot(6).png "Dashboard View")
+![Dashboard Screenshot](assets/Screenshot(9).png "Dashboard View")
+
+
+### Login Page
+![Login Page](assets/Screenshot%20(2).png "Login Page View")
+
+### Checkout Page
+![CheckOut Page](assets/Screenshot(7).png "CheckOut Page View")
+![CheckOut Page](assets/Screenshot(8).png "CheckOut Page View")
+
+### Purchase History Page
+![Purchase History Page](assets/Screenshot(10).png "Purchase History Page View")
+![Purchase History Page](assets/Screenshot(11).png "Purchase History Page View")
+
 ## Features
 - Secure user authentication , Customer can able to Register as well as Login.
 - CRUD functionalities for Selecting the items preferred by customer to buy.
@@ -35,7 +56,7 @@ History, so that they can buy again that stuff if they want.
 
 2. Navigate to the project directory:
    ```bash
-   cd your-repo
+   cd ChikkiShop
 
 3. Install dependencies:
    ```bash
