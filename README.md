@@ -8,9 +8,7 @@ An E-commerce Web Application
 - [Installation](#installation)
 
 ## About the Project
-This project is based on The technology of E-commerce like Amazon or Flipkart. It allows users to buy tech Stuff Online, where the user can register on the website to 
-buy stuff online by selecting the items and checking out, when checking out some money is deducted from users current account Balance, Customer can also able to see their purchase
-History, so that they can buy again that stuff if they want.
+ChikkiShop is an e-commerce platform built with modern web technologies, designed to provide a seamless online shopping experience for tech products. Users can easily register, browse a wide selection of items, and proceed to checkout. At checkout, the platform securely deducts the purchase amount from the user's balance. Additionally, customers can view their purchase history, making it easy to reorder their favorite products.
 
 ## Screenshots
 
