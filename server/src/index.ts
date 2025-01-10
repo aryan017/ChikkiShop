@@ -8,7 +8,7 @@ import { productRouter } from './routes/product'
 
 dotenv.config()
 
-const PORT: number = 10000 ;
+const PORT: number = Number(process.env.PORT);
 const databaseURL: string = process.env.DATABASE_URL 
 const app=express();
 
